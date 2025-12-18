@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Countdown from "@/components/Countdown";
 import DayCard from "@/components/DayCard";
+import Weather from "@/components/Weather";
 import { tripInfo, flights, dailySchedule } from "@/data/tripData";
 
 export default function Home() {
@@ -17,10 +18,7 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="text-6xl mb-4">🇯🇵</div>
           <h1 className="text-3xl md:text-4xl font-bold mb-2">{tripInfo.title}</h1>
-          <p className="text-lg opacity-90 mb-2">{tripInfo.subtitle}</p>
-          <p className="text-sm opacity-80 mb-6">
-            👨‍👩‍👧‍👦 {tripInfo.travelers}
-          </p>
+          <p className="text-lg opacity-90 mb-6">{tripInfo.subtitle}</p>
 
           {/* Countdown */}
           <div className="mb-6">
@@ -37,18 +35,7 @@ export default function Home() {
 
       {/* Weather Info */}
       <section className="max-w-4xl mx-auto px-4 -mt-6 relative z-10">
-        <div className="bg-white rounded-2xl shadow-lg p-4 flex flex-wrap justify-around gap-4">
-          <div className="text-center">
-            <span className="text-2xl">🌡️</span>
-            <p className="text-sm text-gray-600">東京</p>
-            <p className="font-bold text-gray-800">{tripInfo.weather.tokyo}</p>
-          </div>
-          <div className="text-center">
-            <span className="text-2xl">❄️</span>
-            <p className="text-sm text-gray-600">輕井澤</p>
-            <p className="font-bold text-gray-800">{tripInfo.weather.karuizawa}</p>
-          </div>
-        </div>
+        <Weather />
       </section>
 
       {/* Flight Info */}

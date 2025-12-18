@@ -7,6 +7,7 @@ const navItems = [
   { href: "/", label: "首頁", icon: "🏠" },
   { href: "/schedule", label: "行程表", icon: "📅" },
   { href: "/hotels", label: "住宿", icon: "🏨" },
+  { href: "/credentials", label: "憑證", icon: "🎫" },
   { href: "/checklist", label: "打包清單", icon: "✅" },
 ];
 

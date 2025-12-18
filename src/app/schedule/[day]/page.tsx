@@ -71,7 +71,9 @@ export default async function DayDetailPage({ params }: PageProps) {
                 description={item.description}
                 details={item.details}
                 type={item.type}
-                link={item.link}
+                link={'link' in item ? item.link : undefined}
+                image={'image' in item ? item.image : undefined}
+                imageCaption={'imageCaption' in item ? item.imageCaption : undefined}
               />
             ))}
           </div>

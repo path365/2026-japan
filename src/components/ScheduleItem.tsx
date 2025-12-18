@@ -1,3 +1,5 @@
+"use client";
+
 interface ScheduleItemProps {
   time: string;
   title: string;
@@ -8,6 +10,8 @@ interface ScheduleItemProps {
     text: string;
     url: string;
   };
+  image?: string;
+  imageCaption?: string;
 }
 
 const typeColors: Record<string, string> = {
@@ -31,6 +35,8 @@ export default function ScheduleItem({
   details,
   type,
   link,
+  image,
+  imageCaption,
 }: ScheduleItemProps) {
   const typeStyle = type ? typeColors[type] : "bg-gray-50 border-gray-200";
 
@@ -77,6 +83,19 @@ export default function ScheduleItem({
           >
             🔗 {link.text}
           </a>
+        )}
+        {image && (
+          <div className="mt-3">
+            <img
+              src={image}
+              alt={imageCaption || title}
+              className="rounded-lg shadow-md max-w-full md:max-w-md cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => window.open(image, '_blank')}
+            />
+            {imageCaption && (
+              <p className="text-xs text-gray-500 mt-1 italic">{imageCaption}</p>
+            )}
+          </div>
         )}
       </div>
     </div>

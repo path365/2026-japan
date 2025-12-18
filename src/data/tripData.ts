@@ -6,10 +6,54 @@ export const tripInfo = {
     end: "2026-01-16",
     display: "2026/01/11 (日) - 01/16 (五)",
   },
-  travelers: "2 大人 + 2 小孩 (皆 4 歲)",
   weather: {
     tokyo: "3°C ~ 10°C",
     karuizawa: "-6°C ~ 2°C，積雪機率高",
+  },
+};
+
+// 憑證資料
+export const credentials = {
+  vjw: {
+    title: "VJW 入境登錄",
+    images: [
+      "/credentials/image5.png",
+      "/credentials/image7.png",
+      "/credentials/image9.png",
+      "/credentials/image8.png",
+    ],
+  },
+  hotels: [
+    {
+      name: "阪急大井町花園飯店",
+      image: "/credentials/image10.png",
+    },
+    {
+      name: "輕井澤王子大飯店 西館",
+      image: "/credentials/image2.png",
+    },
+    {
+      name: "Richmond Hotel Premier Tokyo Schole",
+      image: "/credentials/image4.png",
+    },
+  ],
+  shinkansen: {
+    outbound: {
+      title: "去程新幹線",
+      date: "01/12/2026",
+      route: "UENO (11:10) → KARUIZAWA (12:15)",
+      passengers: "大人2人、兒童1人",
+      bookingNumber: "E82101",
+      images: ["/credentials/image6.png", "/credentials/image1.png"],
+    },
+    inbound: {
+      title: "回程新幹線",
+      date: "01/14/2026",
+      route: "KARUIZAWA (11:17) → UENO (12:14)",
+      passengers: "大人2人、兒童1人",
+      bookingNumber: "E94097",
+      images: ["/credentials/image3.jpg", "/credentials/image11.jpg"],
+    },
   },
 };
 
@@ -77,6 +121,8 @@ export const dailySchedule = [
           "保日本當地保險",
         ],
         mapUrl: "",
+        image: "/day1-shinkansen-ticket.png",
+        imageCaption: "新幹線票券領取位置示意圖",
       },
       {
         time: "14:05",
@@ -90,6 +136,8 @@ export const dailySchedule = [
           text: "預約網站",
           url: "https://keikyubus.travel.navitime.com/seats/passenger?route=00027700&start=00009433&cid=keikyubus.timetable",
         },
+        image: "/day1-bus-map.png",
+        imageCaption: "機場巴士路線圖與時刻表",
       },
       {
         time: "15:00",
@@ -104,6 +152,10 @@ export const dailySchedule = [
         description: '搭乘「臨海線 (Rinkai Line)」至「東京電訊站」',
         details: [],
         mapUrl: "",
+        link: {
+          text: "Google 路線",
+          url: "https://www.google.com/maps/dir/?api=1&destination=Tokyo+Teleport+Station",
+        },
       },
       {
         time: "17:00",
@@ -164,6 +216,10 @@ export const dailySchedule = [
         description: '搭乘「JR 京濱東北線 (快速)」前往上野站',
         details: ["經過8站，約30分鐘", "10:36發 ➔ 11:03著"],
         mapUrl: "",
+        link: {
+          text: "Google 路線",
+          url: "https://www.google.com/maps/dir/?api=1&destination=Ueno+Station",
+        },
       },
       {
         time: "11:42",
@@ -172,6 +228,10 @@ export const dailySchedule = [
         details: ["Asama 609號 (上野 11:10 發 ➔ 輕井澤 12:15 著)"],
         mapUrl: "",
         type: "transport",
+        link: {
+          text: "Google 路線",
+          url: "https://www.google.com/maps/dir/?api=1&destination=Karuizawa+Station",
+        },
       },
       {
         time: "13:10",
@@ -271,16 +331,19 @@ export const dailySchedule = [
         mapUrl: "",
       },
       {
-        time: "10:57",
+        time: "11:17",
         title: "新幹線返回東京",
-        description: "前往上野站",
+        description: "HAKUTAKA558號 前往上野站",
         details: [
-          "HAKUTAKA558號 (輕井澤 10:19 發 ➔ 上野 11:14 著)",
-          "HAKUTAKA558號 (輕井澤 11:17 發 ➔ 上野 12:14 著)",
-          "Asama 612號 (輕井澤 12:00 發 ➔ 上野 13:06 著)",
+          "輕井澤 11:17 發 ➔ 上野 12:14 著",
+          "預約號碼：E94097",
         ],
         mapUrl: "",
         type: "transport",
+        link: {
+          text: "Google 路線",
+          url: "https://www.google.com/maps/dir/?api=1&destination=Ueno+Station",
+        },
       },
       {
         time: "12:10",
@@ -351,6 +414,10 @@ export const dailySchedule = [
         title: "淺草花屋敷 (遊樂園)",
         description: "押上站搭都營淺草線至淺草站",
         details: [],
+        link: {
+          text: "Google 路線",
+          url: "https://www.google.com/maps/dir/?api=1&destination=Asakusa+Hanayashiki",
+        },
         mapUrl: "",
         type: "activity",
       },
@@ -381,6 +448,10 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "activity",
+        link: {
+          text: "Google 路線",
+          url: "https://www.google.com/maps/dir/?api=1&destination=Tokyo+Skytree",
+        },
       },
       {
         time: "18:00",
@@ -413,6 +484,10 @@ export const dailySchedule = [
         details: ["約 50 分鐘，直達免換車"],
         mapUrl: "",
         type: "transport",
+        link: {
+          text: "Google 路線",
+          url: "https://www.google.com/maps/dir/?api=1&destination=Haneda+Airport+Terminal+3",
+        },
       },
       {
         time: "12:10",
