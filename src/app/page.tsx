@@ -112,7 +112,7 @@ export default function Home() {
       {/* Quick Links */}
       <section className="max-w-4xl mx-auto px-4 mt-8 mb-8">
         <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-          �� 快速連結
+          🔗 快速連結
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <a
