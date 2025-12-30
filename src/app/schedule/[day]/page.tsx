@@ -75,7 +75,7 @@ export default async function DayDetailPage({ params }: PageProps) {
         <DayScheduleClient items={serializedItems} />
 
         {/* Navigation */}
-        <div className="flex justify-between mt-6">
+        <div className="flex justify-between mt-6 mb-4">
           {prevDay ? (
             <Link
               href={`/schedule/${prevDay}`}
@@ -97,6 +97,44 @@ export default async function DayDetailPage({ params }: PageProps) {
             <div />
           )}
         </div>
+
+        {/* Next Day Card */}
+        {nextDay && (() => {
+          const nextDayData = dailySchedule.find((d) => d.day === nextDay);
+          const nextGradient = nextDayData ? (themeColors[nextDayData.theme] || "from-gray-500 to-gray-400") : "from-gray-500 to-gray-400";
+          return nextDayData ? (
+            <Link href={`/schedule/${nextDay}`} className="block">
+              <div className={`bg-gradient-to-br ${nextGradient} rounded-2xl p-6 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer`}>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <span className="text-4xl">{nextDayData.icon}</span>
+                    <div>
+                      <p className="text-sm opacity-80">繼續閱讀</p>
+                      <h3 className="text-xl font-bold">Day {nextDay} - {nextDayData.title}</h3>
+                      <p className="text-sm opacity-90">{nextDayData.date}</p>
+                    </div>
+                  </div>
+                  <div className="text-3xl animate-pulse">→</div>
+                </div>
+              </div>
+            </Link>
+          ) : null;
+        })()}
+
+        {/* End of Trip */}
+        {!nextDay && (
+          <div className="bg-gradient-to-br from-pink-500 to-rose-400 rounded-2xl p-6 text-white shadow-lg text-center">
+            <span className="text-4xl mb-2 block">🎉</span>
+            <h3 className="text-xl font-bold">行程結束！</h3>
+            <p className="text-sm opacity-90 mt-1">期待美好的旅程 ✨</p>
+            <Link
+              href="/schedule"
+              className="inline-block mt-4 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+            >
+              返回行程總覽
+            </Link>
+          </div>
+        )}
       </section>
     </div>
   );

@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import DayCard from "@/components/DayCard";
 import { dailySchedule } from "@/data/tripData";
+import Link from "next/link";
 
 export default function SchedulePage() {
   return (
@@ -31,9 +32,10 @@ export default function SchedulePage() {
           <h2 className="text-lg font-bold text-gray-800 mb-4">行程摘要</h2>
           <div className="space-y-3">
             {dailySchedule.map((day) => (
-              <div
+              <Link
                 key={day.day}
-                className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                href={`/schedule/${day.day}`}
+                className="flex items-center gap-4 p-3 rounded-lg hover:bg-pink-50 transition-colors cursor-pointer group"
               >
                 <span className="text-2xl">{day.icon}</span>
                 <div className="flex-1">
@@ -45,8 +47,8 @@ export default function SchedulePage() {
                   </div>
                   <p className="text-gray-800 font-medium">{day.title}</p>
                 </div>
-                <span className="text-gray-400">→</span>
-              </div>
+                <span className="text-pink-400 group-hover:text-pink-600 group-hover:translate-x-1 transition-all">→</span>
+              </Link>
             ))}
           </div>
         </div>
