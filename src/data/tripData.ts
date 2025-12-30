@@ -123,6 +123,7 @@ export const dailySchedule = [
         mapUrl: "",
         image: "/day1-shinkansen-ticket.png",
         imageCaption: "新幹線票券領取位置示意圖",
+        location: { lat: 35.5494, lng: 139.7798, name: "羽田機場" },
       },
       {
         time: "14:05",
@@ -138,6 +139,7 @@ export const dailySchedule = [
         },
         image: "/day1-bus-map.png",
         imageCaption: "機場巴士路線圖與時刻表",
+        location: { lat: 35.5494, lng: 139.7798, name: "羽田機場巴士站" },
       },
       {
         time: "15:00",
@@ -145,6 +147,7 @@ export const dailySchedule = [
         description: "Ours Inn Hankyu Check-in，S館3F辦理入住",
         details: [],
         mapUrl: "",
+        location: { lat: 35.6067, lng: 139.7345, name: "Ours Inn Hankyu 大井町" },
       },
       {
         time: "16:30",
@@ -156,6 +159,7 @@ export const dailySchedule = [
           text: "Google 路線",
           url: "https://www.google.com/maps/dir/?api=1&destination=Tokyo+Teleport+Station",
         },
+        location: { lat: 35.6264, lng: 139.7758, name: "東京電訊站" },
       },
       {
         time: "17:00",
@@ -163,6 +167,7 @@ export const dailySchedule = [
         description: "DiverCity 獨角獸鋼彈、Aqua City 自由女神像",
         details: ["DiverCity：看獨角獸鋼彈變身", "Aqua City：自由女神像、彩虹橋夜景"],
         mapUrl: "",
+        location: { lat: 35.6252, lng: 139.7754, name: "DiverCity Tokyo" },
       },
       {
         time: "18:30",
@@ -171,6 +176,7 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "food",
+        location: { lat: 35.6279, lng: 139.7751, name: "Aqua City 台場" },
       },
       {
         time: "20:30",
@@ -178,6 +184,7 @@ export const dailySchedule = [
         description: "樓下有大型超市與阪急百貨食品館",
         details: ["可買隔日早餐或牛奶", "可以買一些零食輕井澤住宿吃"],
         mapUrl: "",
+        location: { lat: 35.6067, lng: 139.7345, name: "大井町飯店" },
       },
     ],
   },
@@ -194,6 +201,7 @@ export const dailySchedule = [
         description: "",
         details: [],
         mapUrl: "",
+        location: { lat: 35.6067, lng: 139.7345, name: "大井町飯店" },
       },
       {
         time: "08:30",
@@ -202,6 +210,7 @@ export const dailySchedule = [
         details: ["費用：需現場支付 1 名 4 歲兒童費用 (約 ¥750)"],
         mapUrl: "",
         type: "food",
+        location: { lat: 35.6067, lng: 139.7345, name: "Couleur 餐廳" },
       },
       {
         time: "09:30",
@@ -209,6 +218,7 @@ export const dailySchedule = [
         description: "",
         details: [],
         mapUrl: "",
+        location: { lat: 35.6067, lng: 139.7345, name: "大井町飯店" },
       },
       {
         time: "10:00",
@@ -220,6 +230,7 @@ export const dailySchedule = [
           text: "Google 路線",
           url: "https://www.google.com/maps/dir/?api=1&destination=Ueno+Station",
         },
+        location: { lat: 35.7141, lng: 139.7774, name: "上野站" },
       },
       {
         time: "11:10",
@@ -232,6 +243,7 @@ export const dailySchedule = [
           text: "Google 路線",
           url: "https://www.google.com/maps/dir/?api=1&destination=Karuizawa+Station",
         },
+        location: { lat: 35.7141, lng: 139.7774, name: "上野站新幹線" },
       },
       {
         time: "13:10",
@@ -239,6 +251,7 @@ export const dailySchedule = [
         description: "輕井澤站南口搭乘飯店接駁車 (棕色路線) 至西館B12M",
         details: [],
         mapUrl: "",
+        location: { lat: 36.3422, lng: 138.6362, name: "輕井澤王子大飯店" },
       },
       {
         time: "14:30",
@@ -251,6 +264,7 @@ export const dailySchedule = [
         ],
         mapUrl: "",
         type: "activity",
+        location: { lat: 36.3389, lng: 138.6298, name: "輕井澤王子滑雪場" },
       },
       {
         time: "16:00",
@@ -263,6 +277,7 @@ export const dailySchedule = [
         ],
         mapUrl: "",
         type: "activity",
+        location: { lat: 36.3389, lng: 138.6298, name: "觀光纜車" },
       },
       {
         time: "17:30",
@@ -277,6 +292,7 @@ export const dailySchedule = [
         ],
         mapUrl: "https://pse.is/8ewfv5",
         type: "food",
+        location: { lat: 36.3412, lng: 138.6378, name: "輕井澤王子購物廣場" },
       },
     ],
   },
@@ -293,6 +309,7 @@ export const dailySchedule = [
         description: "請飯店叫計程車直達 (約 ¥2,000)",
         details: ["早餐：房間吃，前一天買好"],
         mapUrl: "",
+        location: { lat: 36.3567, lng: 138.6289, name: "雲場池" },
       },
       {
         time: "10:00",
@@ -301,6 +318,7 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "activity",
+        location: { lat: 36.3567, lng: 138.6289, name: "雲場池" },
       },
       {
         time: "11:00",
@@ -309,6 +327,7 @@ export const dailySchedule = [
         details: ["推薦：川上庵 蕎麥麵 (舊輕井澤)"],
         mapUrl: "",
         type: "food",
+        location: { lat: 36.3612, lng: 138.6342, name: "舊輕井澤銀座通" },
       },
       {
         time: "14:00",
@@ -317,6 +336,7 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "shopping",
+        location: { lat: 36.3412, lng: 138.6378, name: "輕井澤王子購物廣場" },
       },
       {
         time: "18:00",
@@ -325,6 +345,7 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "food",
+        location: { lat: 36.3412, lng: 138.6378, name: "Outlet 美食街" },
       },
     ],
   },
@@ -341,6 +362,7 @@ export const dailySchedule = [
         description: "搭乘飯店接駁車至輕井澤車站",
         details: ["早餐：在房間吃，前一天買好"],
         mapUrl: "",
+        location: { lat: 36.3422, lng: 138.6362, name: "輕井澤站" },
       },
       {
         time: "11:17",
@@ -358,6 +380,7 @@ export const dailySchedule = [
           text: "Google 路線",
           url: "https://www.google.com/maps/dir/?api=1&destination=Ueno+Station",
         },
+        location: { lat: 36.3422, lng: 138.6362, name: "輕井澤站新幹線" },
       },
       {
         time: "12:10",
@@ -365,6 +388,7 @@ export const dailySchedule = [
         description: "建議從上野站搭「計程車」直達押上 (約 ¥2,200)",
         details: ["務必先去飯店寄放行李，輕裝出門戰鬥力才高"],
         mapUrl: "",
+        location: { lat: 35.7101, lng: 139.8107, name: "押上 Richmond Hotel" },
       },
       {
         time: "13:00",
@@ -373,6 +397,7 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "food",
+        location: { lat: 35.7101, lng: 139.8107, name: "Solamachi 美食街" },
       },
       {
         time: "14:00",
@@ -390,6 +415,7 @@ export const dailySchedule = [
           text: "唐吉訶德優惠券",
           url: "https://japanportal.donki-global.com/coupon/cp001_zhtw.html",
         },
+        location: { lat: 35.6967, lng: 139.8142, name: "唐吉訶德錦糸町" },
       },
       {
         time: "17:00",
@@ -397,6 +423,7 @@ export const dailySchedule = [
         description: "把買好的東西拿回房間，稍作休息",
         details: [],
         mapUrl: "",
+        location: { lat: 35.7101, lng: 139.8107, name: "Richmond Hotel" },
       },
       {
         time: "18:00",
@@ -405,6 +432,7 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "activity",
+        location: { lat: 35.7101, lng: 139.8107, name: "東京晴空塔" },
       },
       {
         time: "19:30",
@@ -413,6 +441,7 @@ export const dailySchedule = [
         details: [],
         mapUrl: "",
         type: "food",
+        location: { lat: 35.7101, lng: 139.8107, name: "Solamachi 餐廳" },
       },
     ],
   },
@@ -433,6 +462,7 @@ export const dailySchedule = [
         ],
         mapUrl: "",
         type: "transport",
+        location: { lat: 35.7101, lng: 139.8107, name: "押上站" },
       },
       {
         time: "10:00",
@@ -445,6 +475,7 @@ export const dailySchedule = [
         ],
         mapUrl: "",
         type: "activity",
+        location: { lat: 35.7146, lng: 139.7732, name: "上野動物園/淺草" },
       },
       {
         time: "12:30",
@@ -465,6 +496,7 @@ export const dailySchedule = [
         ],
         mapUrl: "",
         type: "food",
+        location: { lat: 35.7117, lng: 139.7967, name: "淺草仲見世通" },
       },
       {
         time: "14:30",
@@ -477,6 +509,7 @@ export const dailySchedule = [
         ],
         mapUrl: "",
         type: "activity",
+        location: { lat: 35.7148, lng: 139.7967, name: "淺草寺" },
       },
       {
         time: "16:00",
@@ -493,6 +526,7 @@ export const dailySchedule = [
           text: "Google 路線",
           url: "https://www.google.com/maps/dir/?api=1&destination=Tokyo+Skytree",
         },
+        location: { lat: 35.7125, lng: 139.8017, name: "隅田川步道" },
       },
       {
         time: "18:00",
@@ -505,6 +539,7 @@ export const dailySchedule = [
         ],
         mapUrl: "",
         type: "food",
+        location: { lat: 35.7101, lng: 139.8107, name: "Solamachi" },
       },
     ],
   },
@@ -521,6 +556,7 @@ export const dailySchedule = [
         description: "等待 10:00 商場開門買最後伴手禮",
         details: [],
         mapUrl: "",
+        location: { lat: 35.7101, lng: 139.8107, name: "Solamachi" },
       },
       {
         time: "11:00",
@@ -533,6 +569,7 @@ export const dailySchedule = [
           text: "Google 路線",
           url: "https://www.google.com/maps/dir/?api=1&destination=Haneda+Airport+Terminal+3",
         },
+        location: { lat: 35.7101, lng: 139.8107, name: "押上站" },
       },
       {
         time: "12:10",
@@ -540,6 +577,7 @@ export const dailySchedule = [
         description: "抵達羽田第 3 航廈，辦理登機",
         details: [],
         mapUrl: "",
+        location: { lat: 35.5494, lng: 139.7798, name: "羽田機場 T3" },
       },
       {
         time: "14:15",
@@ -547,6 +585,7 @@ export const dailySchedule = [
         description: "返回台灣",
         details: [],
         mapUrl: "",
+        location: { lat: 35.5494, lng: 139.7798, name: "羽田機場" },
       },
     ],
   },

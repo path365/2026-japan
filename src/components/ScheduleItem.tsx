@@ -1,5 +1,7 @@
 "use client";
 
+import { useRef, useEffect } from "react";
+
 interface ScheduleItemProps {
   time: string;
   title: string;
@@ -12,6 +14,10 @@ interface ScheduleItemProps {
   };
   image?: string;
   imageCaption?: string;
+  index?: number;
+  isSelected?: boolean;
+  onItemClick?: (index: number) => void;
+  hasLocation?: boolean;
 }
 
 const typeColors: Record<string, string> = {
@@ -37,14 +43,54 @@ export default function ScheduleItem({
   link,
   image,
   imageCaption,
+  index,
+  isSelected,
+  onItemClick,
+  hasLocation,
 }: ScheduleItemProps) {
   const typeStyle = type ? typeColors[type] : "bg-gray-50 border-gray-200";
+  const itemRef = useRef<HTMLDivElement>(null);
+
+  // 當被選中時捲動到此項目
+  useEffect(() => {
+    if (isSelected && itemRef.current) {
+      itemRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [isSelected]);
+
+  const handleClick = () => {
+    if (hasLocation && index !== undefined && onItemClick) {
+      onItemClick(index);
+    }
+  };
 
   return (
-    <div className="flex gap-4 relative">
-      {/* Timeline */}
+    <div
+      ref={itemRef}
+      className={`flex gap-4 relative transition-all duration-300 rounded-lg ${
+        isSelected
+          ? "bg-pink-50 ring-2 ring-pink-300 -mx-2 px-2 py-2"
+          : hasLocation
+          ? "hover:bg-gray-50 cursor-pointer -mx-2 px-2"
+          : ""
+      }`}
+      onClick={handleClick}
+    >
+      {/* Number Badge & Timeline */}
       <div className="flex flex-col items-center">
-        <div className="w-3 h-3 bg-pink-500 rounded-full z-10"></div>
+        {hasLocation && index !== undefined ? (
+          <div
+            className={`w-7 h-7 rounded-full flex items-center justify-center z-10 text-sm font-bold text-white transition-all duration-300 ${
+              isSelected
+                ? "bg-pink-500 scale-110 shadow-lg"
+                : "bg-pink-400 hover:bg-pink-500"
+            }`}
+          >
+            {index + 1}
+          </div>
+        ) : (
+          <div className="w-3 h-3 bg-gray-300 rounded-full z-10 mt-2"></div>
+        )}
         <div className="w-0.5 bg-pink-200 flex-1 -mt-1"></div>
       </div>
 
@@ -80,6 +126,7 @@ export default function ScheduleItem({
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 mt-2 text-sm text-pink-600 hover:text-pink-700 hover:underline"
+            onClick={(e) => e.stopPropagation()}
           >
             🔗 {link.text}
           </a>
@@ -90,7 +137,10 @@ export default function ScheduleItem({
               src={image}
               alt={imageCaption || title}
               className="rounded-lg shadow-md max-w-full md:max-w-md cursor-pointer hover:shadow-lg transition-shadow"
-              onClick={() => window.open(image, '_blank')}
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(image, '_blank');
+              }}
             />
             {imageCaption && (
               <p className="text-xs text-gray-500 mt-1 italic">{imageCaption}</p>

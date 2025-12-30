@@ -1,5 +1,5 @@
 import Navigation from "@/components/Navigation";
-import ScheduleItem from "@/components/ScheduleItem";
+import DayScheduleClient from "@/components/DayScheduleClient";
 import { dailySchedule } from "@/data/tripData";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -30,6 +30,20 @@ export default async function DayDetailPage({ params }: PageProps) {
   const prevDay = dayNumber > 1 ? dayNumber - 1 : null;
   const nextDay = dayNumber < 6 ? dayNumber + 1 : null;
 
+  // 序列化行程項目
+  const serializedItems = dayData.items.map((item) => ({
+    time: item.time,
+    title: item.title,
+    description: item.description,
+    details: item.details,
+    type: item.type,
+    link: 'link' in item ? item.link : undefined,
+    image: 'image' in item ? item.image : undefined,
+    imageCaption: 'imageCaption' in item ? item.imageCaption : undefined,
+    mapUrl: item.mapUrl,
+    location: 'location' in item ? item.location : undefined,
+  }));
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 to-white pb-20 md:pt-20">
       <Navigation />
@@ -38,7 +52,7 @@ export default async function DayDetailPage({ params }: PageProps) {
       <section
         className={`bg-gradient-to-br ${gradient} text-white py-8 px-4`}
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Link
             href="/schedule"
             className="inline-flex items-center gap-1 text-white/80 hover:text-white mb-4 text-sm"
@@ -56,28 +70,9 @@ export default async function DayDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Schedule */}
-      <section className="max-w-4xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-2xl shadow-md p-6">
-          <h2 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
-            📍 詳細行程
-          </h2>
-          <div className="space-y-2">
-            {dayData.items.map((item, idx) => (
-              <ScheduleItem
-                key={idx}
-                time={item.time}
-                title={item.title}
-                description={item.description}
-                details={item.details}
-                type={item.type}
-                link={'link' in item ? item.link : undefined}
-                image={'image' in item ? item.image : undefined}
-                imageCaption={'imageCaption' in item ? item.imageCaption : undefined}
-              />
-            ))}
-          </div>
-        </div>
+      {/* Schedule with Map */}
+      <section className="max-w-7xl mx-auto px-4 py-8">
+        <DayScheduleClient items={serializedItems} />
 
         {/* Navigation */}
         <div className="flex justify-between mt-6">
